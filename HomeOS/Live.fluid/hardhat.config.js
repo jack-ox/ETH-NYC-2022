@@ -18,4 +18,11 @@ task("accounts", "Prints the list of accounts", async (taskArgs, hre) => {
  */
 module.exports = {
   solidity: "0.8.13",
-};
+  networks: {
+    rinkeby: {
+      url: process.env.RINKEBY_RPC_URL,
+      chainId: 4,
+      accounts: [process.env.DEPLOYER_PRIVATE_KEY]
+    },
+}
+}
